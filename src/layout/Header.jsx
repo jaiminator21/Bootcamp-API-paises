@@ -7,7 +7,7 @@ const Header = () => {
      <header>
         <nav>
             <ul>
-            <li>
+                <li>
                     <Link to="/">
                         <button>Main</button>
                     </Link>
@@ -17,7 +17,19 @@ const Header = () => {
                         <button>Countries</button>
                     </Link>
                 </li>
-               
+                <li>
+                    <Link to="/form">
+                        <button>Solicitar información</button>
+                    </Link>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <Link to="/user">
+                        <button>Área personal</button>
+                    </Link>
+                </li>
             </ul>
         </nav>
     </header>
