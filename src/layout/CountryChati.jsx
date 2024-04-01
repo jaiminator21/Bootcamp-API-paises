@@ -3,12 +3,11 @@ import axios from "axios";
 import CountryCard from "./CountryCard";
 
 const Country = () => {
-  const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState([]);
   const [name, setName] = useState("");
-  const [continent, setContinent] = useState("");
 
   useEffect(() => {
-    const url = name !== "" ? `https://restcountries.com/v3.1/name/${name}` : `https://restcountries.com/v3.1/all`;
+    const url = name !== "" ? `https://restcountries.com/v3.1/name/${name}` : "https://restcountries.com/v3.1/all";
     axios.get(url)
       .then((res) => {
         if (res.data.length > 0) {
@@ -23,16 +22,16 @@ const Country = () => {
               .join(", "),
             cont: country.continents,
           }));
-          setCountries(filterData);
+          setCountry(filterData);
         } else {
-          setCountries([]);
+          setCountry([]);
         }
       })
       .catch((error) => {
         console.error("Error fetching countries:", error);
-        setCountries([]);
+        setCountry([]);
       });
-  }, [name, continent]);
+  }, [name]);
 
   return (
     <>
@@ -48,34 +47,12 @@ const Country = () => {
               value={name.toLowerCase()}
               placeholder="Buscar por nombre"
             />
-
-
-            <select className="selector" value={continent}
-              onChange={(event) => {
-                setContinent(event.target.value);
-              }}
-            >
-              <option value="">Todos los continentes</option>
-              <option value="Africa">Africa</option>
-              <option value="Americas">Americas</option>
-              <option value="Asia">Asia</option>
-              <option value="Europe">Europe</option>
-              <option value="Oceania">Oceania</option>
-            </select>
           </div>
-          
           <div className="container-countries">
-            {countries.map((country) => (
-              <CountryCard key={country.name} data={country} />
+            {country.map((countries) => (
+              <CountryCard key={countries.name} data={countries} />
             ))}
           </div>
-          <div className="mainSelector">
-        {continent !== "" && (
-          <CountryCard
-            continents={countries.find((countries) => countries.name === continent)}
-          />
-        )}
-      </div>
         </div>
       </div>
     </>
@@ -83,3 +60,9 @@ const Country = () => {
 };
 
 export default Country;
+
+
+
+
+
+

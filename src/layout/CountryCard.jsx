@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react'
 
 const CountryCard = (props) => {
+
     const [language, setLanguage] = useState([])
     const data = props.data
-    //console.log(data.lang);
+
     const coin = data.coin
   return (
    <>
