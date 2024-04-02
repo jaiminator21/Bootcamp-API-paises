@@ -4,11 +4,10 @@
 import React, { useState } from 'react'
 
 const CountryCard = (props) => {
-
+  
     const [language, setLanguage] = useState([])
     const data = props.data
-
-    const coin = data.coin
+  //  console.log(data);
   return (
    <>
         <div className='container-card'>
