@@ -1,10 +1,12 @@
 import React from 'react'
 import Country from '../layout/Country'
+import TestCountry from '../layout/TestCountry'
 
 const Countries = () => {
   return (
     <>
-    <Country/>
+      <Country/>   
+ {/*     <TestCountry/>  */}
     </>
   )
 }

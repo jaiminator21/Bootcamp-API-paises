@@ -17,11 +17,10 @@ function App() {
       <Header/>
       <main>
         <Routes>
-        <Route path="" element ={<Landing/>}/>
+          <Route path="" element ={<Landing/>}/>
           <Route path="countries" element ={<Countries/>}/>
           <Route path="form" element ={<Form/>}/>
           <Route path="user" element ={<User/>}/>
-
         </Routes>  
       </main>
     </Router> 

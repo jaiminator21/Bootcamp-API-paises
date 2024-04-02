@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CountryCard from "./CountryCard";
 
-const Country = () => {
+const CountryOld = () => {
   const [country, setCountry] = useState([]);
   const [name, setName] = useState("");
 
@@ -11,7 +11,7 @@ const Country = () => {
     axios.get(url)
       .then((res) => {
         if (res.data.length > 0) {
-          console.log(res.data);
+         // //console.log(res.data);
           const filterData = res.data.map((country) => ({
             name: country.name,
             flag: country.flags,

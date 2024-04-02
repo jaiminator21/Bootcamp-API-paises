@@ -8,7 +8,6 @@ const User = () => {
 
   const login = async (event) => {
     event.preventDefault();
-
     const url = "https://node-tickets-chi.vercel.app/user/login"; //Enlace a donde se hace la petición
     try {
       // Se hace peticion a la bbdd con los datos del login
@@ -24,7 +23,7 @@ const User = () => {
       //La sesion del navegador se puede ver en inspecionar --> aplicación --> almacenamiento
     } catch (error) {
       setError(true);
-      console.log(error);
+      //console.log(error);
     }
   };
 
