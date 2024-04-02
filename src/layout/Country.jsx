@@ -59,29 +59,31 @@ let hasShownErrorAlert = false;
           <div className="page-title">
             <h1>Paises</h1>
           </div>
-          <div className="search-box">
-            <input
-              type="text"
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              value={name}
-              placeholder="Buscar por nombre"/>
-          </div>
+          <div className="container-filter">
+            <div className="search-box">
+              <input
+                type="text"
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                value={name}
+                placeholder="Buscar por nombre"/>
+            </div>
    
-          <div className="drop-selector">
-          <select className="selector" value={continent}
-              onChange={(event) => {
-                setContinent(event.target.value);
-              }}
-            >
-              <option value="">Todos los continentes</option>
-              <option value="africa">Africa</option>
-              <option value="americas">Americas</option>
-              <option value="asia">Asia</option>
-              <option value="europe">Europe</option>
-              <option value="oceania">Oceania</option>
-            </select>
+            <div className="drop-selector">
+            <select className="selector" value={continent}
+                onChange={(event) => {
+                  setContinent(event.target.value);
+                }}
+              >
+                <option value="">Todos los continentes</option>
+                <option value="africa">Africa</option>
+                <option value="americas">Americas</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+              </select>
+            </div>
           </div>
       </div>
    

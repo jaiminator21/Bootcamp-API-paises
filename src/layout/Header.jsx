@@ -5,7 +5,13 @@ const Header = () => {
   return (
     <>
      <header>
-        <nav>
+        <div className="world-logo">
+            <Link to="/">
+                <img src="/world-globe.png" alt="" />
+            </Link>
+        </div>
+
+        <nav className="header-mainnav">
             <ul>
                 <li>
                     <Link to="/">
@@ -22,9 +28,6 @@ const Header = () => {
                         <button>Solicitar información</button>
                     </Link>
                 </li>
-            </ul>
-
-            <ul>
                 <li>
                     <Link to="/user">
                         <button>Área personal</button>

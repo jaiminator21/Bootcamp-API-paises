@@ -2,14 +2,16 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react'
+import { Link } from "react-router-dom"   
 
-const CountryCard = (props) => {
+const CountryCard = (props, countryName) => {
   
     const [language, setLanguage] = useState([])
     const data = props.data
   //  console.log(data);
   return (
    <>
+    <Link to={`/${data.name.common}`} state={data}>
         <div className='container-card'>
             <div className='container-card-upper'>
              <img src={data.flag.svg} alt={data.flag.alt} /> 
@@ -35,6 +37,7 @@ const CountryCard = (props) => {
                 </div>
             </div>
         </div>
+    </Link>
    </>
   )
 }
