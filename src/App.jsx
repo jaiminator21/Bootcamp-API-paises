@@ -8,9 +8,11 @@ import Landing from './pages/Landing'
 import Countries from './pages/Countries'
 import Form from './pages/Form'
 import User from './pages/User'
+import CountryDetail from './layout/CountryDetail'
 
 
 function App() {
+
   return (
     <>
     <Router> 
@@ -18,9 +20,11 @@ function App() {
       <main>
         <Routes>
           <Route path="" element ={<Landing/>}/>
-          <Route path="countries" element ={<Countries/>}/>
+          <Route path="countries"  element ={<Countries />}/>
           <Route path="form" element ={<Form/>}/>
           <Route path="user" element ={<User/>}/>
+          <Route path ="/:name" element = {<CountryDetail />}/>
+   
         </Routes>  
       </main>
     </Router> 
