@@ -9,9 +9,16 @@ import Countries from './pages/Countries'
 import Form from './pages/Form'
 import User from './pages/User'
 import CountryDetail from './layout/CountryDetail'
+import Protected from './component/Protected'
 
 
 function App() {
+
+  const [login, setLogin] = useState({
+    email: "",
+    token: ""
+  })
+  console.log("App.jsx",login);
 
   return (
     <>
@@ -20,9 +27,11 @@ function App() {
       <main>
         <Routes>
           <Route path="" element ={<Landing/>}/>
+          <Route element={<Protected isAllowed={!!login.token}/>}>
           <Route path="countries"  element ={<Countries />}/>
-          <Route path="form" element ={<Form/>}/>
-          <Route path="user" element ={<User/>}/>
+            <Route path="form" element ={<Form/>}/>
+          </Route>   
+          <Route path="user" element ={<User setLogin={setLogin}/>}/>
           <Route path ="/:name" element = {<CountryDetail />}/>
    
         </Routes>  
