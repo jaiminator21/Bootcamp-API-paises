@@ -199,4 +199,26 @@ header{
 }
 
 
+.country-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 20px;
+}
 
+
+.country-stat{
+  background-color: #006377;
+  border: solid 2px #002931;
+  border-radius: 4px;
+  margin: 10px 10px;
+  padding: 2px 7px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.country-stat span{
+  font-weight: bolder;
+}

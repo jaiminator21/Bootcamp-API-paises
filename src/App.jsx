@@ -27,8 +27,8 @@ function App() {
       <main>
         <Routes>
           <Route path="" element ={<Landing/>}/>
-          <Route element={<Protected isAllowed={!!login.token}/>}>
           <Route path="countries"  element ={<Countries />}/>
+          <Route element={<Protected isAllowed={!!login.token}/>}>
             <Route path="form" element ={<Form/>}/>
           </Route>   
           <Route path="user" element ={<User setLogin={setLogin}/>}/>

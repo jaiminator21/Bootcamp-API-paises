@@ -45,7 +45,7 @@ const Form = () => {
 
   return (
     <div>
-      <h2>Formulario de Contacto</h2>
+      <h5>Formulario de Contacto</h5>
       <form onSubmit={submit}>
         <label htmlFor="nombre">Nombre:</label>
         <input

@@ -25,7 +25,8 @@ const CountryDetail = () => {
             cont: country.continents,
             subregion: country.subregion,
             time: country.timezones,
-            maps: Object.values(country.maps || {}).join(', '),
+           // maps: Object.values(country.maps || {}).join(', '),
+            maps: country.maps,
             borders: country.borders
 
         }))
