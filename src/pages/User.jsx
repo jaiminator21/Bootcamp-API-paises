@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const User = () => {
+const User = ({setLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -11,16 +11,21 @@ const User = () => {
 
   const login = async (event) => {
     event.preventDefault();
-    const url = "https://node-tickets-chi.vercel.app/user/login"; //Enlace a donde se hace la petición
+    const login_URL = "https://node-tickets-nu.vercel.app/user/login"; //Enlace a donde se hace la petición
     try {
       // Se hace peticion a la bbdd con los datos del login
       axios
-        .post(url, {
+        .post(login_URL, {
           email,
           password,
         })
         .then((response) =>
-          sessionStorage.setItem("token", response.data.data.token)
+        setLogin({
+          ...login,
+          email: response.data.data.user.email,
+          token: response.data.data.token,
+        })
+
         );
       //Usamos la sesion del navegador para almacenar el token de forma temporal
       //La sesion del navegador se puede ver en inspeccionar --> aplicación --> almacenamiento
@@ -28,33 +33,35 @@ const User = () => {
       setError(true);
       console.log(error);
     }
+   
   };
 
   const register = async (event) => {
     event.preventDefault();
+    console.log("entro en register");
     // Validar si las contraseñas coinciden
     if (password !== confirmPassword) {
       setError(true);
-      return;
+      console.log(password, confirmPassword);
+
     }
 
-    const url = "https://node-tickets-chi.vercel.app/user/register"; //Enlace a donde se hace la petición
+    const register_URL = "https://node-tickets-nu.vercel.app/user/register"; //Enlace a donde se hace la petición
     try {
-      // Se hace peticion a la bbdd con los datos del registro
       axios
-        .post(url, {
+        .post(register_URL, {
           email,
           password,
         })
         .then((response) =>
-          sessionStorage.setItem("token", response.data.data.token)
+          console.log(response.data)
         );
-      //Usamos la sesion del navegador para almacenar el token de forma temporal
-      //La sesion del navegador se puede ver en inspeccionar --> aplicación --> almacenamiento
     } catch (error) {
       setError(true);
-      console.log(error);
+      console.log("Register",error);
     }
+    setLoginVisible(true);
+    setRegisterVisible(false);
   };
 
   const showLogin = () => {
