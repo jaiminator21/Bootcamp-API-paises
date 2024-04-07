@@ -1,4 +1,8 @@
 import React from 'react'
+import moment from 'moment-timezone';
+
+
+
 
 const CountyPage = (props) => {
     const data = props.data
@@ -13,8 +17,12 @@ const CountyPage = (props) => {
     ///console.log("Array de valores del objeto", listNative);
     /* console.log("Sin entrar en el objeto", data.nameNative);
     console.log("Sin especificar",data.nameNative[`${listNative[0]}`]);*/
+
+
     
-    console.log("Especificando oficial",data.nameNative[listNative[0]].official); 
+
+    
+
   return (
     <>
     <div className='izquierda'>    
