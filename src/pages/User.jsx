@@ -69,19 +69,21 @@ const User = () => {
 
   return (
     <>
-      <div className="logIn" onClick={showLogin}>
-        <button>Iniciar sesión</button>
-      </div>
+      <div className="login_register_buttons">
+        <div className="logIn" onClick={showLogin}>
+          <button>Iniciar sesión</button>
+        </div>
 
-      <div className="enregister" onClick={showRegister}>
-        <button>Registrarse</button>
+        <div className="enregister" onClick={showRegister}>
+          <button>Registrarse</button>
+        </div>
       </div>
 
       {loginVisible && (
-        <div className="Formulario-registro">
+        <div className="formulario_login">
           <h1>Login</h1>
           <form onSubmit={login}>
-            <label>E-mail</label>
+            <label>E-mail:</label>
             <input
               type="text"
               value={email}
@@ -89,7 +91,7 @@ const User = () => {
               placeholder="Introduzca su correo electrónico"
               required
             ></input>
-            <label>Contraseña</label>
+            <label>Contraseña:</label>
             <input
               type="password"
               value={password}
@@ -104,10 +106,10 @@ const User = () => {
       )}
 
       {registerVisible && (
-        <div className="Formulario-registro">
+        <div className="formulario_registro">
           <h1>Registrarse</h1>
           <form onSubmit={register}>
-            <label>E-mail</label>
+            <label>E-mail:</label>
             <input
               type="text"
               value={email}
@@ -115,7 +117,7 @@ const User = () => {
               placeholder="Introduzca su correo electrónico"
               required
             ></input>
-            <label>Contraseña</label>
+            <label>Contraseña:</label>
             <input
               type="password"
               value={password}
@@ -123,7 +125,7 @@ const User = () => {
               placeholder="Introduzca su contraseña"
               required
             ></input>
-            <label>Confirmar Contraseña</label>
+            <label>Confirmar contraseña:</label>
             <input
               type="password"
               value={confirmPassword}
@@ -141,4 +143,3 @@ const User = () => {
 };
 
 export default User;
-

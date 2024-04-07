@@ -44,13 +44,14 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <h2>Formulario de Contacto</h2>
-      <form onSubmit={submit}>
+    <div className='form_main_div'>
+      <h2 className='form_title'>Formulario de Contacto</h2>
+      <form onSubmit={submit} className='form'>
         <label htmlFor="nombre">Nombre:</label>
         <input
           type="text"
           id="nombre"
+          placeholder='Introduzca tu nombre'
           value={estado.nombre}
           onChange={escucharInput}
         />
@@ -58,6 +59,7 @@ const Form = () => {
         <input
           type="email"
           id="email"
+          placeholder='Introduzca tu correo electrónico'
           value={estado.email}
           onChange={escucharInput}
         />
@@ -65,6 +67,7 @@ const Form = () => {
         <input
           type="text"
           id="pais"
+          placeholder='¿Sobre qué país desea recibir información?'
           value={estado.pais}
           onChange={escucharInput}
         />
@@ -72,6 +75,7 @@ const Form = () => {
         <input
           type="text"
           id="interes"
+          placeholder='¿Qué le interesa saber de ese país?'
           value={estado.interes}
           onChange={escucharInput}
         />
